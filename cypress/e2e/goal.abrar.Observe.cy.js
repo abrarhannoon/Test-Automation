@@ -27,11 +27,7 @@ describe('Observe page', () => {
         cy.get('@Apply Filter Button', { timeout: 10000 }).should('be.visible').should('contain.text','Apply filters').click();
         cy.get('@observer table', { timeout: 10000 }).should('be.visible');
             
-        cy.defineFilterDataResultAliases();
-
-        
-          
-
+   
 
     })
 
@@ -43,7 +39,6 @@ describe('Observe page', () => {
         cy.get('@Apply Filter Button', { timeout: 10000 }).should('be.visible').should('contain.text','Apply filters').click();
         cy.get('@observer table', { timeout: 10000 }).should('be.visible');
 
-        cy.defineFilterDataResultAliases();
 
 
     })
@@ -56,7 +51,6 @@ describe('Observe page', () => {
         cy.get('@Apply Filter Button').should('contain.text','Apply filters', { timeout: 10000 }).should('be.visible').click()
         cy.get('@observer table', { timeout: 20000 }).should('be.visible');
 
-        cy.defineFilterDataResultAliases();
 
     })
     it('Verify filter functionality with Valid: All Goals, All groups, All level, And not observe selections',()=>{
@@ -66,8 +60,7 @@ describe('Observe page', () => {
         cy.get('@Apply Filter Button', { timeout: 10000 }).should('be.visible').should('contain.text','Apply filters').click()
         cy.get('@observer table', { timeout: 10000 }).should('be.visible');
 
-        cy.defineFilterDataResultAliases();
-
+   
       
 
 
@@ -80,7 +73,7 @@ describe('Observe page', () => {
         cy.get('@Apply Filter Button', { timeout: 10000 }).should('be.visible').should('contain.text','Apply filters').click()
         
         cy.get('@observer table', { timeout: 20000 }).should('be.visible');
-        cy.defineFilterDataResultAliases();
+   
 
     });
 
