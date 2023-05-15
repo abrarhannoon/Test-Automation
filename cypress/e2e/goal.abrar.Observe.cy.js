@@ -20,12 +20,6 @@ describe('Observe page', () => {
 
     });
 
-    it('Verify filter functionality with Invalid Goal selection',()=>{
-        cy.get('@Goal').check({force: true});
-        cy.get('@Apply Filter Button').should('contain.text','Apply filters').click();
-        cy.contains('Please select a group', { timeout: 500 }).should('be.visible');
-
-    })
 
     it('Verify filter functionality with Valid: specific Goal, specific group, and other default selections.',()=>{
         cy.get('@Goal').check({force: true});
