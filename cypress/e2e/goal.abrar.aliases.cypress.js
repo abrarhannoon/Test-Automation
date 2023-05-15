@@ -13,18 +13,7 @@ Cypress.Commands.add('defineFilterAliases', () => {
     cy.get('input[name="all_goals"]').should('exist').as('All goals');
     cy.get('#observer_table_div').should('exist').as('observer table');
   })
-  Cypress.Commands.add('defineFilterDataResultAliases',()=>{
-    cy.contains('Total Goals').should('contain', '1').as('Total Goals')
-    cy.contains('Observed').should('contain', '0').as('Observed')
-    cy.contains('Expected by now').should('contain', '1').as('Expected by now')
-    cy.contains('Late submission').should('contain', '1').as('Late submission')
-    cy.contains('strong', 'Goal1').siblings('br').next().should('contain', 'QA').as('Goal group')
-    cy.contains('strong', 'Goal1').siblings('br').next().should('contain', 'ECD: May 6, 2023').as('Expected date')
-    cy.contains('strong', 'g1').should('exist')
-    cy.contains('strong', 'hazza').should('exist')
-    cy.contains('h6', 'Not Observed').should('exist')
-    cy.contains('h6', 'late').should('exist')
-  })
+
 
 
   Cypress.Commands.add('defineAddStaffAliases',()=>{
