@@ -2,7 +2,7 @@ describe('staff page', ()=>{
 
     beforeEach(()=>{
         cy.visit('/');
-        cy.get ('#id_username'). type('Ibtihaj_7');
+        cy.get ('#id_username').type('Ibtihaj_7');
         cy.get ('#id_password').type('Ibtihaj@12345');
         cy.get ('select[name="login_as').select('staff');
         cy.get ('form[action="/login/"] > button[type="submit"]').click();
@@ -46,7 +46,8 @@ describe('staff page', ()=>{
         cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
         cy.get('.dtr-data > .row > :nth-child(1) > a').click();
         cy.get('input[type="email"]').should('have.attr','name','email').should('have.attr','required');
-        cy.get('input[value="omar@gmail.com"]').should('have.attr','name','email').clear().type('omar@gmail.com{enter}');
+        cy.get('input[value="omar@gmail.com"]').should('have.attr','name','email').clear().type('omar4@gmail.com{enter}');
+        cy.get('#edit_staff_omar > :nth-child(6) > .textinput').should('have.value', 'omar4@gmail.com');
     })
 
     it ('edit email with invalid input', () => {
@@ -55,6 +56,113 @@ describe('staff page', ()=>{
         cy.get('.dtr-data > .row > :nth-child(1) > a').click();
         cy.get('input[type="email"]').should('have.attr','name','email').should('have.attr','required');
         cy.get('input[value="omar@gmail.com"]').should('have.attr','name','email').clear().type('john@example{enter}');
-        cy.get('form[name="error_message"]').should('contain.text','bad input');
+        cy.get('#edit_staff_omar > :nth-child(6) > .textinput').should('not.have.value', 'john@example');
+    })
+
+    it ('edit Goal permition of staff to “Read”', () => {
+        cy.get('tr[id="staff_omar"] td[class="sorting_1"]').contains('td', 'omar').should('exist').click();
+        cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
+        cy.get('.dtr-data > .row > :nth-child(1) > a').click();
+        cy.get('tr[id="edit_staff_omar"] select[name="permissions_Goals"]').select('1').type('{enter}');
+        cy.get('tr[id="edit_staff_omar"] select[name="permissions_Goals"]')
+        .invoke('val')
+        .then((value) => {
+            cy.get('tr[id="edit_staff_omar"] select[name="permissions_Goals"]')
+            .find(`option[value="${value}"]`)
+            .invoke('text')
+            .should('eq', 'Read');
+        });
+    })
+
+    it ('edit Observe permition of staff to “Write”', () => {
+        cy.get('tr[id="staff_adam"] td[class="sorting_1"]').contains('td', 'adam').should('exist').click();
+        cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
+        cy.get('.dtr-data > .row > :nth-child(1) > a').click();
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Observe"]')
+        .parent('td')
+        .invoke('removeAttr', 'style')
+        .then(() => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Observe"]')
+            .select('2')
+            .type('{enter}');
+        });
+
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Observe"]')
+        .invoke('val')
+        .then((value) => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Observe"]')
+            .find(`option[value="${value}"]`)
+            .invoke('text')
+            .should('eq', 'Write');
+        });
+    })
+
+    it ('edit Staff permition of staff to “N/A”', () => {
+        cy.get('tr[id="staff_adam"] td[class="sorting_1"]').contains('td', 'adam').should('exist').click();
+        cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
+        cy.get('.dtr-data > .row > :nth-child(1) > a').click();
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Staff"]')
+        .parent('td')
+        .invoke('removeAttr', 'style')
+        .then(() => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Staff"]')
+            .select('0')
+            .type('{enter}');
+        });
+
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Staff"]')
+        .invoke('val')
+        .then((value) => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Staff"]')
+            .find(`option[value="${value}"]`)
+            .invoke('text')
+            .should('eq', 'N/A');
+        });
+    })
+
+    it ('edit Student permition of staff to “Read”', () => {
+        cy.get('tr[id="staff_adam"] td[class="sorting_1"]').contains('td', 'adam').should('exist').click();
+        cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
+        cy.get('.dtr-data > .row > :nth-child(1) > a').click();
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Student"]')
+        .parent('td')
+        .invoke('removeAttr', 'style')
+        .then(() => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Student"]')
+            .select('1')
+            .type('{enter}');
+        });
+
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Student"]')
+        .invoke('val')
+        .then((value) => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Student"]')
+            .find(`option[value="${value}"]`)
+            .invoke('text')
+            .should('eq', 'Read');
+        });
+    })
+
+    it ('edit Academic permition of staff to “Write”', () => {
+        cy.get('tr[id="staff_adam"] td[class="sorting_1"]').contains('td', 'adam').should('exist').click();
+        cy.get('.dtr-data > .row > :nth-child(1) > a').should('exist');
+        cy.get('.dtr-data > .row > :nth-child(1) > a').click();
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Academic"]')
+        .parent('td')
+        .invoke('removeAttr', 'style')
+        .then(() => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Academic"]')
+            .select('2')
+            .type('{enter}');
+        });
+
+        cy.get('tr[id="edit_staff_adam"] select[name="permissions_Academic"]')
+        .invoke('val')
+        .then((value) => {
+            cy.get('tr[id="edit_staff_adam"] select[name="permissions_Academic"]')
+            .find(`option[value="${value}"]`)
+            .invoke('text')
+            .should('eq', 'Write');
+        });
     })
 })
