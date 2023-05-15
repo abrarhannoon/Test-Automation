@@ -44,10 +44,4 @@ describe('filter page', ()=>{
           });
     })
 
-    it ('Verify select all group option without any other selections', () => {
-        cy.get('.custom-control-label\\:\\:before')
-
-       
-    })
-
 })
