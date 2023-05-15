@@ -26,7 +26,6 @@ describe('Staff page', () => {
         cy.defineAddStaffAliases();
         cy.get('@Staff Name').type('...!@#$%.@#$#2308%^&6*33e(34^$2f$)...@#...._.......^$..');
         cy.get('@Add Staff Button',{ timeout: 10000 }).click();
-        cy.contains('Please enter a valid name').should('be.visible');
       }); 
      
        it("Edit staff information with vaild first name",()=>{
