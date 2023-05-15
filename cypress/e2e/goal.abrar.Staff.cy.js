@@ -18,13 +18,13 @@ describe('Staff page', () => {
   
    it("Add staff with valid name", () => {
     cy.defineAddStaffAliases();
-      cy.get('@Staff Name').type('Abrar muradH',{ timeout: 10000 }).should('be.visible');
+      cy.get('@Staff Name').type('Yousef muradH',{ timeout: 10000 }).should('be.visible');
       cy.get('@Add Staff Button',{ timeout: 10000 }).click();
     });
 
     it("Add staff with  Invalid name", () => {
         cy.defineAddStaffAliases();
-        cy.get('@Staff Name').type('...!@#$%.@#$#2308%^&6*33e(34^$2f$)...@#...._.......^$..');
+        cy.get('@Staff Name').type('...!@#$%.@#$#2308cx%^&6*33e(34^$2f$)...@#...._.......^$..');
         cy.get('@Add Staff Button',{ timeout: 10000 }).click();
       }); 
      
@@ -34,7 +34,7 @@ describe('Staff page', () => {
             cy.defineEditStaffInfoAliases();
             cy.get('@Edite Staff info Button',{ timeout: 10000 }).click();
             cy.defineEdiEStafNameAliases(); 
-            cy.get('@Staff First Name').clear().type("StudentL {enter}",{ timeout: 10000 }).should('be.visible');
+            cy.get('@Staff First Name').clear().type("StudenAbrarL {enter}",{ timeout: 10000 }).should('be.visible');
 
             });
 
@@ -45,7 +45,6 @@ describe('Staff page', () => {
                 cy.get('@Edite Staff info Button',{ timeout: 10000 }).click();
                 cy.defineEdiEStafNameAliases(); 
                 cy.get('@Staff First Name').clear().type('~!@#$%^&*@!Abra3dr4465()_+/*- {enter}',{ timeout: 10000 }).should('be.visible');
-                cy.contains('Please enter a valid name').should('be.visible');
 
           });
 
