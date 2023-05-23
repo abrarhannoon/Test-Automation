@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GitHub Repository - Staff View Test Cases Automation</title>
-</head>
 <body>
-  <h1>GitHub Repository - Staff View Test Cases Automation</h1>
+  <h1> Staff View Test Cases Automation</h1>
   
-  <p>This GitHub repository contains automated test cases for the staff view functionality of the MDX University staff management system. The web application can be accessed at <a href="https://goal-dev.mdx.ac.uk/accounts/login/?next=/" target="_blank">https://goal-dev.mdx.ac.uk/accounts/login/?next=/</a>.</p>
+  <p>This repository contains automated test cases for the staff view functionality of the MDX University staff management system. The web application can be accessed at <a href="https://goal-dev.mdx.ac.uk/accounts/login/?next=/" target="_blank">https://goal-dev.mdx.ac.uk/accounts/login/?next=/</a>.</p>
 
   <h2>Purpose</h2>
   <p>The purpose of this repository is to provide a comprehensive suite of automated tests that validate the behavior and functionality of the staff view feature. The automated tests cover various scenarios and functionalities, including login/authentication, staff profiles, permissions, data management, and navigation within the application.</p>
