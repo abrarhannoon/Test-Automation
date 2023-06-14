@@ -14,6 +14,10 @@
     <li><strong>Test Automation Framework:</strong> The test cases are implemented using a suitable test automation framework, such as Cypress, which allows interaction with the web application's user interface.</li>
     <li><strong>Test Data Management:</strong> The repository includes necessary test data, such as sample staff names and relevant data objects, to simulate realistic scenarios during testing.</li>
     <li><strong>Assertions and Reporting:</strong> The test cases incorporate appropriate assertions to validate the expected behavior of the staff view. Detailed test reports are generated, providing insights into test execution results and any encountered issues.</li>
+    [testCase.xlsx - Observe-staff.pdf](https://github.com/abrarhannoon/Test-Automation/files/11743321/testCase.xlsx.-.Observe-staff.pdf)
+[testCase.xlsx - Security.pdf](https://github.com/abrarhannoon/Test-Automation/files/11743342/testCase.xlsx.-.Security.pdf)
+[testCase.xlsx - My group-student.pdf](https://github.com/abrarhannoon/Test-Automation/files/11743344/testCase.xlsx.-.My.group-student.pdf)
+[testCase.xlsx - Add goal-staff.pdf](https://github.com/abrarhannoon/Test-Automation/files/11743345/testCase.xlsx.-.Add.goal-staff.pdf)
   </ul>
 </body>
 </html>
